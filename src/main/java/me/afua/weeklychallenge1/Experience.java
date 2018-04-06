@@ -1,5 +1,9 @@
 package me.afua.weeklychallenge1;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+
 public class Experience {
 
     private String title;
@@ -49,8 +53,15 @@ public class Experience {
 
     public void setEndDate(String endDate) {
         if(endDate.isEmpty() || endDate==null)
-        { endDate = "Present";
+        { endDate = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         }
         this.endDate = endDate;
+    }
+
+    public String getDiff()
+    {
+
+        Period dateDifference = Period.between(LocalDate.parse(startDate, DateTimeFormatter.ofPattern("dd/MM/yyyy")),LocalDate.parse(endDate, DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+        return dateDifference.getYears()+" year(s), "+dateDifference.getMonths()+" month(s),"+dateDifference.getDays()+" day(s)";
     }
 }

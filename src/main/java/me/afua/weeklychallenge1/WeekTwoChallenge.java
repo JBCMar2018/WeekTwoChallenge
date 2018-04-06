@@ -126,7 +126,7 @@ public class WeekTwoChallenge {
             System.out.println("Title:"+eachExperience.getTitle());
             System.out.println("Organization:"+eachExperience.getOrganization());
             System.out.println("Duties:"+eachExperience.getDuties());
-            System.out.println("Dates:"+eachExperience.getStartDate()+" - "+eachExperience.getEndDate()+"\n");
+            System.out.println("Dates:"+eachExperience.getStartDate()+" - "+eachExperience.getEndDate()+" \n"+eachExperience.getDiff()+"\n");
         }
 
         System.out.println("************************************************************");
@@ -138,6 +138,5 @@ public class WeekTwoChallenge {
             System.out.println("Skill:"+eachSkill.getSkillName());
             System.out.println("Proficiency:"+eachSkill.getProficiency()+"\n");
         }
-
     }
 }
